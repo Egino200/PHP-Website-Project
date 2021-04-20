@@ -1,26 +1,78 @@
-<?php include "PHP/PHPLayout/header.php"; ?>
-    <h2>Welcome to Abidas</h2>
+<?php include "PHP/PHPLayout/header.php";
+
+$dbHost = "localhost";
+$dbUser = "root";
+$dbPassword = "password";
+$dbName = "robdb";
+
+try {
+
+
+    $dsn = "mysql:host=$dbHost;dbname=$dbName";
+
+    $options = array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+
+    $pdo = new PDO($dsn, $dbUser, $dbPassword, $options);
+    echo "Connection successful";
+
+
+} catch (PDOException $e) {
+    echo "DB Connection failed: " . $e->getMessage();
+}
+
+?>
+<h2>Welcome to Abidas</h2>
 <P>enter your details here to make an account</P>
 
-    <form method="post">
-        <label for="firstname">First Name</label>
-        <input type="text" name="firstname" id="firstname">
+<form action="login.php" method="POST">
 
-        <label for="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname">
+    <label for="username">username</label>
+    <input type="text" name="username" >
 
-        <label for="email">Email Address</label>
-        <input type="text" name="email" id="email">
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" >
 
-        <label for="password">password</label>
-        <input type="password" name="password" id="username">
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" >
 
-        <label for="username">username</label>
-        <input type="text" name="username" id="username">
+    <label for="email">Email Address</label>
+    <input type="text" name="email" >
 
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <label for="password">password</label>
+    <input type="password" name="password" >
 
-    <a href="index.php">Back to home</a>
 
-<?php include "PHP/PHPLayout/footer.php"; ?>
+    <input type="submit" name="submit" value="submit">
+</form>
+
+
+<?php
+
+if (isset($_REQUEST['submit'])) {
+    $username = $_REQUEST['username'];
+   $firstname = $_REQUEST['firstname'];
+    $lastname = $_REQUEST['lastname'];
+    $email = $_REQUEST['email'];
+    $password =$_REQUEST['password'];
+
+    try {
+        $sql = "insert into account(account_username, account_first_name, account_last_name, account_email, account_password) 
+values('$username','$firstname','$lastname','$email','$password')";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute();
+
+    } catch (PDOException $e) {
+        echo $sql . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . $e;
+    }
+
+}
+
+
+?>
+
+
+<a href="index.php">Back to home</a>
+
