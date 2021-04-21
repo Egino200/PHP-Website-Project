@@ -1,31 +1,17 @@
 <?php include "PHP/PHPLayout/header.php";
 
-$dbHost = "localhost";
-$dbUser = "root";
-$dbPassword = "password";
-$dbName = "robdb";
-
-try {
 
 
-    $dsn = "mysql:host=$dbHost;dbname=$dbName";
 
-    $options = array(
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-
-    $pdo = new PDO($dsn, $dbUser, $dbPassword, $options);
-    echo "Connection successful";
+include_once  "PHP/PHPClasses/Datrabase.php";
 
 
-} catch (PDOException $e) {
-    echo "DB Connection failed: " . $e->getMessage();
-}
-
+$link = Datrabase::makeLink();
 ?>
 <h2>Welcome to Abidas</h2>
 <P>enter your details here to make an account</P>
 
-<form action="login.php" method="POST">
+<form action="signup.php" method="POST">
 
     <label for="username">username</label>
     <input type="text" name="username" >
@@ -60,7 +46,7 @@ if (isset($_REQUEST['submit'])) {
         $sql = "insert into account(account_username, account_first_name, account_last_name, account_email, account_password) 
 values('$username','$firstname','$lastname','$email','$password')";
 
-        $stmt = $pdo->prepare($sql);
+        $stmt = $link->prepare($sql);
 
         $stmt->execute();
 
@@ -74,5 +60,6 @@ values('$username','$firstname','$lastname','$email','$password')";
 ?>
 
 
-<a href="index.php">Back to home</a>
+<P>already have an account?</P>
+<a href="login.php">Log in</a>
 
