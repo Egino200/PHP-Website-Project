@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+session_start();
+
+?>
 
 <H2>Abidas</H2>
 
