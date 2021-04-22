@@ -15,7 +15,7 @@ class Datrabase
 
             require "config.php";
             $link = new PDO($dsn, $dbUser, $dbPassword, $options);
-            echo "Connection successful";
+
 
             return $link;
 

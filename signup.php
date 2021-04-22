@@ -7,6 +7,8 @@ include_once  "PHP/PHPClasses/Datrabase.php";
 
 
 $link = Datrabase::makeLink();
+
+
 ?>
 <h2>Welcome to Abidas</h2>
 <P>enter your details here to make an account</P>
