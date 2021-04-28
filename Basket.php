@@ -3,7 +3,7 @@ require "PHP/PHPLayout/header.php";
 require "PHP/PHPClasses/leBasket.php";
 session_start();
 ?>
-
+    <style>@import "Stylesheet/stylesheet.css";</style>
     <div>Welceom to the basket</div>
 <?php $array = leBasket::getBasket() ?>
 

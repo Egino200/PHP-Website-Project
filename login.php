@@ -3,7 +3,7 @@ session_start();
 
 
 ?>
-
+    <style>@import "Stylesheet/stylesheet.css";</style>
 <H2>Abidas</H2>
 
 

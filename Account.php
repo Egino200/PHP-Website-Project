@@ -4,6 +4,7 @@ session_start();
 
 require "PHP/PHPLayout/header.php"
 ?>
+    <style>@import "Stylesheet/stylesheet.css";</style>
 
 
     <form action="Account.php" method="POST">

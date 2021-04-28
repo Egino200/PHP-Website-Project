@@ -3,11 +3,9 @@ require "PHP/PHPLayout/header.php";
 
 session_start();
 ?>
+    <style>@import "Stylesheet/stylesheet.css";</style>
 
-
-<?php
-
-include_once "PHP/PHPClasses/Clothing.php";
+   <?php include_once "PHP/PHPClasses/Clothing.php";
 
 $clothesArray = Clothing::getArray();
 

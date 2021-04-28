@@ -7,6 +7,7 @@ $link = Datrabase::makeLink();
 
 
 ?>
+<style>@import "Stylesheet/stylesheet.css";</style>
 <h2>Welcome to Abidas</h2>
 <P>enter your details here to make an account</P>
 

@@ -1,7 +1,7 @@
 <?php
 
 ?>
-
+<style>@import "../../Stylesheet/stylesheet.css";</style>
 <footer>
     <div>
         <div>
