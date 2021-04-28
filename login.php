@@ -30,7 +30,7 @@ if(isset($_REQUEST['submit'])){
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
 
-    Customer::verifyLogin(Customer::loginStuff($username, $password),$username,$password);
+  Customer::loginStuff($username, $password);
 
 
 }

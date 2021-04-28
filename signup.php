@@ -4,7 +4,7 @@
 
 
 include_once  "PHP/PHPClasses/Datrabase.php";
-
+require 'php/Layout/Footer.php';
 
 $link = Datrabase::makeLink();
 
