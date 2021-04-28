@@ -25,7 +25,7 @@ session_start();
     </div>
 
 <form class="formting" method="POST" action ="Basket.php">
-    <input id="button" type="submit" value="Order Here">
+    <input id="button" type="submit" value="Check Out">
 </form>
 
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST'){
