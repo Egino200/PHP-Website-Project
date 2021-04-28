@@ -1,6 +1,46 @@
-.header{
+.topper{
+    width: 100%;
     display: flex;
-    border-bottom: black;
-  
+    border-bottom:5px solid black;
+    justify-content: space-between;
+
 }
 
+.TemplateText{
+    color:black;
+
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.botter{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+   height: 90px;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-top:5px solid black;
+
+}
+
+#welcome{
+    text-align: center;
+    font-weight: bold;
+    padding-top:20px;
+}
+
+.storeIcon{
+    border: 5px solid black;
+    margin-top:50px;
+
+}
+#storeflex{
+    display: flex;
+    justify-content: space-between;
+}

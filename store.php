@@ -11,10 +11,10 @@ $clothesArray = Clothing::getArray();
 
 $e= null ;
 ?>
-
+<div id="storeflex">
 <?PHP foreach ($clothesArray as $cloth) { ?>
 
-        <a href="addtocart<?php  echo ++$e ?>.php">
+        <a class ="storeIcon" href="addtocart<?php  echo ++$e ?>.php">
 
         <div> <?PHP echo $cloth['clothes_name']; ?>  </div>
 
@@ -25,7 +25,7 @@ $e= null ;
 
 
 <?PHP } ?>
-
+</div>
 <?php
 require 'PHP/PHPLayout/Footer.php';
 ?>
