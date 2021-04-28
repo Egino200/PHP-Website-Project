@@ -26,8 +26,21 @@ class leBasket
 
     }
 
-    public static function printbasket(){
+    public static function deleteBasket(){
+        include_once "Datrabase.php";
 
+        try {
+            $link = Datrabase::makeLink();
+
+            $sql = "delete from basket";
+
+            $stmt = $link->prepare($sql);
+
+            $stmt->execute();
+
+        }catch (PDOException $e){
+            echo $sql . "<br>" . "<br>" . "<br>" . "<br>" . $e;
+        }
 
     }
 
