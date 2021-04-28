@@ -1,10 +1,7 @@
-<?php include "PHP/PHPLayout/header.php";
-
-
-
+<?php
 
 include_once  "PHP/PHPClasses/Datrabase.php";
-require 'php/Layout/Footer.php';
+
 
 $link = Datrabase::makeLink();
 
@@ -52,6 +49,8 @@ values('$username','$firstname','$lastname','$email','$password')";
 
         $stmt->execute();
 
+        header('Location: login.php');
+
     } catch (PDOException $e) {
         echo $sql . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . "<br>" . $e;
     }
@@ -62,6 +61,6 @@ values('$username','$firstname','$lastname','$email','$password')";
 ?>
 
 
-<P>already have an account?</P>
-<a href="login.php">Log in</a>
+<P>already have an account?<a href="login.php"> Log in</a></P>
+
 

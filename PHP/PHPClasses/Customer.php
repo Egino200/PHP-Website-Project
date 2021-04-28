@@ -70,15 +70,29 @@ class Customer
         $stmt->execute();
         $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        var_dump($array);
+
         return $array[0]['account_id'];
 
-     /*   if ($stmt->execute()) {
-            $array = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
-            return $array["account_id"];
+        /*if ($stmt->execute()) {
+            $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $array[0]["account_id"];
         } else {
             echo "yo this aint workin";
         }*/
+
+    }
+
+    public static function deleteAcc($username){
+        include_once "Datrabase.php";
+
+        $link = Datrabase::makeLink();
+
+        $sql = "delete from account where account_username = '$username'";
+
+        $stmt = $link->prepare($sql);
+
+        $stmt->execute();
+        header("location:login.php");
 
     }
 

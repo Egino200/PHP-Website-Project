@@ -20,6 +20,7 @@ session_start();
     <input type="submit" name="submit" value="submit">
 </form>
 
+    <div>already have an account?<a href = "signup.php">sign up here</a></div>
 <?php
 
 require_once "PHP/PHPClasses/Customer.php";

@@ -8,12 +8,11 @@
             <a href ="index.php">About us</a>
             <a href ="index.php">Contact us</a>
             <a href ="index.php">Looking to join?</a>
-        </div>
-        <div>
             <p>Copyright </p>
             <p>Our Policies</p>
             <p>Cookies</p>
         </div>
+
 
     </div>
 
