@@ -5,6 +5,9 @@
     justify-content: space-between;
 
 }
+.forms{
+    text-align: center;
+}
 
 .TemplateText{
     color:black;
@@ -85,4 +88,19 @@
     background-color: black;
     color: white;
     text-align: center;
+}
+#button2{
+    display: block;
+    width:60%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.name{
+
+    font-weight:bold;
+    text-align: center;
+    font-size: 50px;
 }

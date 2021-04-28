@@ -8,30 +8,30 @@ $link = Datrabase::makeLink();
 
 ?>
 <style>@import "Stylesheet/stylesheet.css";</style>
-<h2>Welcome to Abidas</h2>
-<P>enter your details here to make an account</P>
-
-<form action="signup.php" method="POST">
+<h2 class="name">Welcome to Abidas</h2>
+<P id="welcome">enter your details here to make an account</P>
+<div class="forms">
+<form class="TemplateText" action="signup.php" method="POST">
 
     <label for="username">username</label>
     <input type="text" name="username" >
-
+<br>
     <label for="firstname">First Name</label>
     <input type="text" name="firstname" >
-
+<br>
     <label for="lastname">Last Name</label>
     <input type="text" name="lastname" >
-
+<br>
     <label for="email">Email Address</label>
     <input type="text" name="email" >
-
+<br>
     <label for="password">password</label>
     <input type="password" name="password" >
-
-
-    <input type="submit" name="submit" value="submit">
+<br>
+<br>
+    <input type="submit"  id="button" name="submit" value="submit">
 </form>
-
+</div>
 
 <?php
 
@@ -63,6 +63,6 @@ values('$username','$firstname','$lastname','$email','$password')";
 ?>
 
 
-<P>already have an account?<a href="login.php"> Log in</a></P>
+<P class="TemplateText">already have an account?<a href="login.php"> Log in</a></P>
 
 

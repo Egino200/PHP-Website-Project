@@ -4,35 +4,38 @@ session_start();
 
 ?>
     <style>@import "Stylesheet/stylesheet.css";</style>
-<H2>Abidas</H2>
+    <H2 class="name">Abidas</H2>
 
 
-<P>Log in here</P>
+    <P id="welcome">Log in here</P>
 
-<!-- this form is used to login and will refuse entry if details are wrong -->
-<form action="login.php" method="POST">
+    <!-- this form is used to login and will refuse entry if details are wrong -->
+    <div class="forms">
+        <form class="TemplateText" action="login.php" method="POST">
 
-    <label for="username">username</label>
-    <input type="text" name="username" >
+            <label for="username">username</label>
+            <input type="text" name="username">
 
-    <label for="password">password</label>
-    <input type="password" name="password" >
+            <br>
+            <label for="password">password</label>
+            <input type="password" name="password">
+            <br>
 
-    <input type="submit" name="submit" value="submit">
-</form>
-
-    <div>already have an account?<a href = "signup.php">sign up here</a></div>
+            <br>
+            <input  type="submit" id="button" name="submit" value="submit">
+        </form>
+    </div>
+    <div class="TemplateText">already have an account?<a href="signup.php">sign up here</a></div>
 <?php
 
 require_once "PHP/PHPClasses/Customer.php";
 
 
-
-if(isset($_REQUEST['submit'])){
+if (isset($_REQUEST['submit'])) {
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
 
-  Customer::loginStuff($username, $password);
+    Customer::loginStuff($username, $password);
 
 
 }
