@@ -35,6 +35,7 @@ $link = Datrabase::makeLink();
 
 <?php
 
+ /* this code recieves the data from the form and adds it to a row in the account database. if it fails it will print an error message */
 if (isset($_REQUEST['submit'])) {
     $username = $_REQUEST['username'];
    $firstname = $_REQUEST['firstname'];

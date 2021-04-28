@@ -4,26 +4,28 @@ require "PHP/PHPClasses/leBasket.php";
 session_start();
 ?>
     <style>@import "Stylesheet/stylesheet.css";</style>
-    <div>Welceom to the basket</div>
+
 <?php $array = leBasket::getBasket() ?>
+    <div id="tutorial">Welcome to your basket, when you are ready click the button below to check out.</div>
+    <div id="storeflex">
 
-
+        <!-- this for loop prints the values of the added items to the basket page using an associative array-->
 <?PHP foreach ($array as $basket) { ?>
 
-    <div>
+    <div class ="storeIcon">
 
-        <div> <?PHP echo $basket['basket_name']; ?>  </div>
+        <div class="icontext"> <?PHP echo $basket['basket_name']; ?>  </div>
 
         <img src="<?php echo $basket["basket_pic_path"] ?>">
 
-        <div>€<?PHP echo $basket['basket_price'] ?> </div>
+        <div class="icontext">€<?PHP echo $basket['basket_price'] ?> </div>
     </div>
 
 <?PHP } ?>
+    </div>
 
-
-<form method="POST" action ="Basket.php">
-    <input type="submit" value="Order Here">
+<form class="formting" method="POST" action ="Basket.php">
+    <input id="button" type="submit" value="Order Here">
 </form>
 
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST'){

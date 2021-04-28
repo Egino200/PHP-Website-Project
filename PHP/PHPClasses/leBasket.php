@@ -3,7 +3,7 @@
 
 class leBasket
 {
-
+/* returns an associative array of the basket table in the database */
     public static function getBasket(){
 
             include_once "Datrabase.php";
@@ -26,6 +26,7 @@ class leBasket
 
     }
 
+    /* deletes the current baskets items and redirects the user to the ordered page */
     public static function deleteBasket(){
         include_once "Datrabase.php";
 

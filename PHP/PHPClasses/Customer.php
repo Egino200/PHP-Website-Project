@@ -4,7 +4,7 @@
 class Customer
 {
 
-
+/* this function checks the values inputted against the database. if the password or th username do not match with the data in the database it will deny entry and display a message */
     public static function loginStuff($username, $password)
     {
 
@@ -30,7 +30,7 @@ class Customer
 
             } else {
 
-                echo "your details are incorrect you absolute cretin";
+                echo "your details are incorrect, please try again";
             }
 
 
@@ -41,14 +41,14 @@ class Customer
 
 
     }
-
+/*this code is utilised in the function above and checks the the array pulled from the database has the same value as the data inputted by the user   */
     public static function verifyLogin($array, $username, $password)
     {
 
         if ($array['account_username'] = $username || $array['account_password'] = $password) {
             $_SESSION['username'] = $username;
 
-            echo "this works";
+
             header('Location: index.php');
         } else {
             echo "your password or username is incorrect, try again";
@@ -58,6 +58,7 @@ class Customer
 
     }
 
+    /* this code gets an array from the database and returns the id related to the username */
     public static function getID($username)
     {
         include_once "Datrabase.php";
@@ -73,15 +74,9 @@ class Customer
 
         return $array[0]['account_id'];
 
-        /*if ($stmt->execute()) {
-            $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $array[0]["account_id"];
-        } else {
-            echo "yo this aint workin";
-        }*/
-
     }
 
+    /* this function deletes the users account based on the username  */
     public static function deleteAcc($username){
         include_once "Datrabase.php";
 
@@ -95,7 +90,7 @@ class Customer
         header("location:login.php");
 
     }
-
+  /* this function changes the specified details of the user. it can vary depending on the parameters inputted. */
     public static function detailChanger($column, $user_id, $value)
     {
         include_once "Datrabase.php";

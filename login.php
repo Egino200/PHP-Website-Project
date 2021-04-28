@@ -9,6 +9,7 @@ session_start();
 
 <P>Log in here</P>
 
+<!-- this form is used to login and will refuse entry if details are wrong -->
 <form action="login.php" method="POST">
 
     <label for="username">username</label>

@@ -3,7 +3,7 @@
 
 class Clothing
 {
-
+/* this function takes in values of the items from the store and inserts them into the basket table in the database */
     public static function insertCart($picpath,$price,$name){
 
         $link = Datrabase::makeLink();
@@ -17,7 +17,7 @@ class Clothing
 
     }
 
-
+/* this function grabs an associative array from the clothes table in the database. it then returns this array */
     public static function getArray(){
 
        include_once "Datrabase.php";

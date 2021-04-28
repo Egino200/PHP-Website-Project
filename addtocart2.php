@@ -1,7 +1,7 @@
 <?php
 require_once "PHP/PHPClasses/Clothing.php";
 
-
+/* this page grabs the values of the item from an associative array and ads it to the basket */
 $Array = Clothing::getArray();
 
 
